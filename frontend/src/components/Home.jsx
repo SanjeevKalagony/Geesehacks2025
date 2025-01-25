@@ -6,7 +6,6 @@ export default function Home() {
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Home Page</h1>
       <p className="mb-4">Welcome to the Home page!</p>
-      <h2 className="text-xl font-semibold mb-2">Upload your resume below: </h2>
        {/* Use the Upload component */}
     </div>
   );
