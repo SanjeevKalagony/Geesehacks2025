@@ -15,10 +15,10 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="flex space-x-4">
-            <NavLink to="/" className="text-gray-600 hover:text-gray-800">Home</NavLink>
-            <NavLink to="/about" className="text-gray-600 hover:text-gray-800">About</NavLink>
-            <NavLink to="/login" className="text-gray-600 hover:text-gray-800">Login</NavLink>
-            <NavLink to="/resume" className="text-gray-600 hover:text-gray-800">Resume</NavLink>
+            <NavLink to="/" className="text-blue-600 font-bold hover:text-blue-800">Home</NavLink>
+            <NavLink to="/about" className="text-green-600 font-bold hover:text-green-800">About</NavLink>
+            <NavLink to="/login" className="text-red-600 font-bold hover:text-red-800">Login</NavLink>
+            <NavLink to="/resume" className="text-purple-600 font-bold hover:text-purple-800">Resume</NavLink>
           </div>
         </div>
       </nav>
