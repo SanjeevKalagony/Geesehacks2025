@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const resumeRoutes = require('./resume');
-
+const LoginRoutes = require('./registerlogin');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -11,12 +11,6 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
-
-
-// Login Route
-
 
 // Home Page Route
 app.get("/", (req, res) => {
@@ -29,6 +23,9 @@ app.get("/", (req, res) => {
     ];
     res.json(skills);
 });
+
+// Login routes
+app.use('/api', LoginRoutes);
 
 // Resume Route
 app.use('/api', resumeRoutes);
