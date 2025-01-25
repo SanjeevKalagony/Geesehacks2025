@@ -31,8 +31,15 @@ app.get("/", (req, res) => {
 });
 
 // Resume Route
-app.use('/improve-resume', resumeRoutes);
+app.use('/api', resumeRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
+/*
+curl -X POST "http://localhost:4000/api/improve-resume" \
+     -H "Content-Type: multipart/form-data" \
+     -F "resume=@/Users/rachna/Dossier/dossier-privé/résumé/RachnaPoonitResumeJan24.pdf"
+     */
