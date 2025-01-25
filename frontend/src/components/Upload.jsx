@@ -17,7 +17,7 @@ export default function Upload() {
   };
 
   return (
-    <div className="flex flex-col items-center mt-4">
+    <div className="flex flex-col items-center mt-4 bg-white shadow-lg rounded-xl p-8 max-w-lg w-full">
       <input 
         type="file" 
         accept="application/pdf" 
