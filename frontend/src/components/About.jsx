@@ -11,8 +11,8 @@ export default function About() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 via-white to-purple-100 p-6">
-      <div className="max-w-4xl bg-white shadow-lg rounded-xl p-8">
-        <h1 className="text-3xl font-bold text-blue-600 text-center mb-6">
+      <div className="max-w-4xl bg-white shadow-lg rounded-xl p-10">
+        <h1 className="text-4xl font-bold text-blue-600 text-center mb-6">
           Welcome to <span className="text-purple-600">Skill Scan</span>!
         </h1>
         <p className="text-lg text-gray-700 mb-4">
