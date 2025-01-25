@@ -1,7 +1,14 @@
 import React from 'react';
 import '../index.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function About() {
+  const navigate = useNavigate(); // Hook for navigation
+
+  const handleGetStarted = () => {
+    navigate('/'); // Navigate to the home page
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 via-white to-purple-100 p-6">
       <div className="max-w-4xl bg-white shadow-lg rounded-xl p-8">
@@ -26,7 +33,10 @@ export default function About() {
         <p className="text-lg text-gray-700 mb-4">
           Whether you're a recent graduate or a seasoned professional, Skill Scan equips you with the tools and insights needed to succeed in your career goals.
         </p>
-        <button className="mt-6 px-6 py-2 bg-blue-600 text-white text-lg font-semibold rounded-full shadow hover:bg-blue-700 transition duration-300">
+        <button
+          onClick={handleGetStarted} // Trigger navigation on click
+          className="mt-6 px-6 py-2 bg-blue-600 text-white text-lg font-semibold rounded-full shadow hover:bg-blue-700 transition duration-300"
+        >
           Get Started
         </button>
       </div>
