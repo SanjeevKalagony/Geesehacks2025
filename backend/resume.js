@@ -1,22 +1,33 @@
 const express = require('express');
 const multer = require('multer');
-const {Configuration, OpenAIApi} = require('openai');
+const path = require('path');
+const { OpenAI } = require('openai');
 
-//Multer Configuration
-const upload = multer({ dest: 'uploads/' });
+// Set up Multer storage
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');  // Specify folder where files are stored
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + path.extname(file.originalname);
+    cb(null, file.fieldname + '-' + uniqueSuffix);  // Unique filename
+  },
+});
+
+// Initialize Multer with the storage configuration
+const upload = multer({ storage: storage });
 
 // OpenAI API Configuration
 require('dotenv').config();
-const configuration = new Configuration({
+const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
-const openai = new OpenAIApi(configuration);
 
 // Create Router
 const router = express.Router();
 
 // Resume Critique Route
-router.post("/resume", upload.single('resume'), async (req, res) => {
+router.get("/improve-resume", upload.single('resume'), async (req, res) => {
     try {
         const resumeText = req.body.resume || ''; // If resume text is send as JSON
         const resumeFile = req.file || ''; // If resume is uploaded as a file

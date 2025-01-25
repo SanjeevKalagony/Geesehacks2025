@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const resume = require('./resume');
+const resumeRoutes = require('./resume');
 
 
 const app = express();
@@ -14,16 +14,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
-// Test Route
-app.get("/test", (req, res) => {
-    res.send("SkillScan Backend working");
-});
 
 // Login Route
 
 
 // Home Page Route
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
     const skills = [
         { id: 1, name: 'Get your Resume Critiqued', description: 'Analyze your resume and get suggestions by AI' },
         { id: 2, name: 'LinkedIn Profile improvement', description: 'Get suggestions for your linkedin profile' },
@@ -35,8 +31,8 @@ app.get("/home", (req, res) => {
 });
 
 // Resume Route
-app.use('/improve-resume', resume);
+app.use('/improve-resume', resumeRoutes);
 
 app.listen(PORT, () => {
-    console.log(`Server is running on httpL//localhost:${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
