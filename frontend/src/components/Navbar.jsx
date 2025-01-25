@@ -14,11 +14,11 @@ export default function Navbar() {
               <img src={logo} alt="Logo" className="h-40 w-40 rounded-full p-2 mr-2 cursor-pointer" />
             </Link>
           </div>
-          <div className="flex space-x-4">
-            <NavLink to="/" className="text-blue-600 font-bold hover:text-blue-800">Home</NavLink>
-            <NavLink to="/about" className="text-green-600 font-bold hover:text-green-800">About</NavLink>
-            <NavLink to="/login" className="text-red-600 font-bold hover:text-red-800">Login</NavLink>
-            <NavLink to="/resume" className="text-purple-600 font-bold hover:text-purple-800">Resume</NavLink>
+          <div className="flex space-x-6">
+            <NavLink to="/" className="text-blue-600 font-bold text-lg hover:text-blue-800">Home</NavLink>
+            <NavLink to="/about" className="text-green-600 font-bold text-lg hover:text-green-800">About</NavLink>
+            <NavLink to="/login" className="text-red-600 font-bold text-lg hover:text-red-800">Login</NavLink>
+            <NavLink to="/resume" className="text-purple-600 font-bold text-lg hover:text-purple-800">Resume</NavLink>
           </div>
         </div>
       </nav>
