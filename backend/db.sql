@@ -11,7 +11,7 @@ GRANT ALL PRIVILEGES ON DATABASE skillscan TO admin;
 
 
 
--- curl -X POST http://localhost:3000/register \
+-- curl -X POST http://localhost:4000/api/register \
 -- -H "Content-Type: application/json" \
 -- -d '{
 --     "email": "john@example.com",
@@ -20,9 +20,7 @@ GRANT ALL PRIVILEGES ON DATABASE skillscan TO admin;
 --     "lastname": "Doe"
 -- }'
 
--- curl -X POST http://localhost:3000/login \   
+
+-- curl -X POST http://localhost:4000/api/login \
 -- -H "Content-Type: application/json" \
--- -d '{
---     "email": "john@example.com",
---     "password": "password123"
--- }'
+-- -d '{"email": "ssrachna@gmail.com", "password": "password123"}'
