@@ -2,6 +2,14 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const { OpenAI } = require('openai');
+const fs = require('fs');
+
+const uploadDir = path.join(__dirname, 'uploads');
+
+// Check if uploads directory exists, if not, create it
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
 
 // Set up Multer storage
 const storage = multer.diskStorage({
@@ -27,15 +35,16 @@ const openai = new OpenAI({
 const router = express.Router();
 
 // Resume Critique Route
-router.get("/improve-resume", upload.single('resume'), async (req, res) => {
+router.post("/improve-resume", upload.single('resume'), async (req, res) => {
     try {
         const resumeText = req.body.resume || ''; // If resume text is send as JSON
         const resumeFile = req.file || ''; // If resume is uploaded as a file
 
-        let parsedResume = resumeText
+        let parsedResume = resumeText;
 
         if (resumeFile) {
-            parsedResume = `Uploaded file path: ${resumeFile.path}`;
+            const resumeContent = fs.readFileSync(resumeFile.path, 'utf-8');
+            parsedResume = resumeContent;
         }
 
         // AI logic for resume improvement
