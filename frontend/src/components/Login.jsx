@@ -8,9 +8,9 @@ export default function Login() {
       <h1>Login Page</h1>
       <p>Please login to continue.</p>
     </div>
-    <div className="bg-blue-500 text-white text-xl p-4">
+    <p1 className="bg-blue-500 text-white text-xl p-4">
   Tailwind CSS is working!
-</div>
+</p1>
 
     </>
   );
