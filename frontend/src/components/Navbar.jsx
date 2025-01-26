@@ -19,6 +19,7 @@ export default function Navbar() {
             <NavLink to="/about" className="text-green-600 font-bold text-lg hover:text-green-800">About</NavLink>
             <NavLink to="/login" className="text-red-600 font-bold text-lg hover:text-red-800">Login</NavLink>
             <NavLink to="/resume" className="text-purple-600 font-bold text-lg hover:text-purple-800">Resume</NavLink>
+            <NavLink to="/mock-interview" className="text-pink-600 font-bold text-lg hover:text-pink-800">Mock Interview</NavLink>
           </div>
         </div>
       </nav>
