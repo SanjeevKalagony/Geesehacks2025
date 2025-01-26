@@ -31,7 +31,8 @@ export default function Upload() {
 
       const data = await res.json();
       if (data.success) {
-        setResponse(data.suggestions);
+        const formattedResponse = data.formattedSuggestions.replace(/\\n/g, "<br/>");
+        setResponse(formattedResponse);
       } else {
         setError(data.message);
       }
@@ -62,7 +63,8 @@ export default function Upload() {
       {response && (
         <div className="mt-4 bg-gray-100 p-4 rounded text-left">
           <h2 className="text-lg font-bold">Resume Suggestions:</h2>
-          <p>{response}</p>
+          
+          <div dangerouslySetInnerHTML={{ __html: response }} />
         </div>
       )}
     </div>
