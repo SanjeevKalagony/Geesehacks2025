@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const resumeRoutes = require('./resume');
 const LoginRoutes = require('./registerlogin');
+const interviewRoutes = require('./interview');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -29,6 +30,9 @@ app.use('/api', LoginRoutes);
 
 // Resume Route
 app.use('/api', resumeRoutes);
+
+// Interview Route
+app.use('/api', interviewRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
