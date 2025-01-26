@@ -71,11 +71,6 @@ const transcribeAudio = async (gcsUri) => {
     }
 
     return response.results.map(r => r.alternatives[0].transcript).join("\n");
-    // const transcription = response.results
-    //     .map((result) => result.alternatives[0].transcript)
-    //     .join("\n");
-
-    // return transcription;
 };
 
 // Main interview logic
