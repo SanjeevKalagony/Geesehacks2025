@@ -1,16 +1,18 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const resumeRoutes = require('./resume');
-const LoginRoutes = require('./registerlogin');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+const resumeRoutes = require('./resume');
+const LoginRoutes = require('./registerlogin');
+const interviewRoutes = require('./interview');
 
 // Home Page Route
 app.get("/", (req, res) => {
@@ -29,6 +31,9 @@ app.use('/api', LoginRoutes);
 
 // Resume Route
 app.use('/api', resumeRoutes);
+
+// Interview Route
+app.use('/api', interviewRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
