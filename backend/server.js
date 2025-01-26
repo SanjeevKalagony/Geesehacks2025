@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const resumeRoutes = require('./resume');
-const LoginRoutes = require('./registerlogin');
+//const LoginRoutes = require('./registerlogin');
 const interviewRoutes = require('./interview');
 
 const app = express();
@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 });
 
 // Login routes
-app.use('/api', LoginRoutes);
+//app.use('/api', LoginRoutes);
 
 // Resume Route
 app.use('/api', resumeRoutes);
