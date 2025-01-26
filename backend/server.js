@@ -27,10 +27,13 @@ app.get("/", (req, res) => {
 });
 
 // Login routes
-app.use('/api', LoginRoutes);
+//app.use('/api', LoginRoutes);
 
 // Resume Route
 app.use('/api', resumeRoutes);
+
+// Interview Route
+app.use('/api', interviewRoutes);
 
 // Interview Route
 app.use('/api', interviewRoutes);
